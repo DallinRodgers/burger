@@ -1,6 +1,6 @@
-// Password from .env file
-const password = process.env.DB_PASS;
+var password = require("../server");
 
+console.log("Connection: " + password);
 // Connect to MYSQL Database
 var connection = mysql.createConnection({
   host: "localhost",
