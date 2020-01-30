@@ -1,13 +1,13 @@
 var mysql = require("mysql");
-var password = require("../server");
 
-console.log("Connection: " + password);
+var data = process.env;
+
 // Connect to MYSQL Database
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: data.DB_PASS,
   database: "burgers_db"
 });
 
