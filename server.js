@@ -2,26 +2,22 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-// Password from .env file
-const password = process.env.DB_PASS;
-
 var PORT = process.env.PORT || 8080;
-
-// Password from .env file
-const password = process.env.DB_PASS;
-console.log("server.js " + password);
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var orm = require("./config/orm");
+// var orm = require("./config/orm");
 
-orm.selectAll();
+// // orm.selectAll();
+// // Works
+// // orm.insertOne("This is a test", false);
+// // Works
+// // orm.updateOne(2, true);
+// orm.selectAll();
 
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
-
-module.exports.password = process.env.DB_PASS;
