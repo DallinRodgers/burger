@@ -4,18 +4,22 @@ const app = express();
 
 var PORT = process.env.PORT || 8080;
 
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// var orm = require("./config/orm");
+// Set Handlebars.
+var exphbs = require("express-handlebars");
 
-// // orm.selectAll();
-// // Works
-// // orm.insertOne("This is a test", false);
-// // Works
-// // orm.updateOne(2, true);
-// orm.selectAll();
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+var routes = require("./controllers/burgers_controller.js");
+
+app.use(routes);
 
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
