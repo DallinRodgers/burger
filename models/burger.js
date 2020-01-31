@@ -4,7 +4,7 @@ var orm = require('../config/orm.js')
 // orm.insertOne("This is a test", false);
 // Works
 // orm.updateOne(2, true);
-orm.selectAll();
+// orm.selectAll();
 
 var burger = {
     all: function(cb){
