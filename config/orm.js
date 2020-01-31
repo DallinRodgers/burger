@@ -5,7 +5,7 @@ var orm = {
   selectAll: function(callBack) {
     connection.query("SELECT * FROM burgers", function(err, result) {
       if (err) throw err;
-      console.log(result);
+      // console.log(result);
       callBack(result);
     });
   },
