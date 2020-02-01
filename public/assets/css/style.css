@@ -8,9 +8,20 @@ html {
   font-size: 10px;
   font-family: "Roboto Condensed", sans-serif;
   min-height: 100%;
+  background: rgb(179, 255, 171);
+  background: linear-gradient(
+    180deg,
+    rgba(179, 255, 171, 1) 0%,
+    rgba(18, 255, 247, 1) 100%
+  );
+}
+h1,
+h2 {
+  transform: skewX(-20deg);
+  font-weight: 300;
 }
 h1 {
-  font-size: 6.5rem;
+  font-size: 10.5rem;
   text-align: center;
 }
 h2 {
@@ -21,11 +32,31 @@ h2 {
 li {
   list-style: none;
   margin: 0.5rem;
+  padding: 0.5rem;
   font-size: 1.8rem;
+  border-radius: 0.5rem;
+  background: rgb(179, 255, 171);
+  background: linear-gradient(
+    54deg,
+    rgba(179, 255, 171, 1) 0%,
+    rgba(18, 255, 247, 1) 90%
+  );
+  display: flex;
+  justify-content: space-between;
+  transform: skewX(-20deg);
+}
+li span {
+  transform: skewX(20deg);
 }
 button {
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  margin-left: 0.5rem;
+  background: rgba(18, 255, 247, 1);
+  outline: none;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
 }
 
 #burger-status {
@@ -34,8 +65,12 @@ button {
   padding: 10rem 0;
 }
 .burgers-to-eat,
-.burgers-eaten {
-  padding: 0 1.5rem;
+.burgers-eaten,
+.create-form {
+  padding: 1.5rem;
+  background: #fff;
+  min-height: 15rem;
+  border-radius: 2rem;
 }
 .d-none {
   display: none;
@@ -43,13 +78,15 @@ button {
 .container {
   max-width: 100rem;
   margin: 0 auto;
+  padding: 10rem 0;
 }
 .create-form {
-  max-width: 60rem;
+  max-width: 50rem;
   min-height: 10rem;
   font-size: 1.8rem;
   margin: 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #fff;
 }
