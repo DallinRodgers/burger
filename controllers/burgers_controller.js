@@ -1,22 +1,37 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 var burger = require("../models/burger.js");
 
-router.get('/', function(req, res){
-    burger.all(function(data){
-        var burgerObject = {
-            burger: data
-        };
-        console.log(burgerObject);
-        res.render("index", burgerObject);
-    });
+router.get("/", function(req, res) {
+  burger.all(function(data) {
+    var burgerObject = {
+      burger: data
+    };
+    console.log(burgerObject);
+    res.render("index", burgerObject);
+  });
 });
 
-router.post("/api/burgers", function(req, res){
-    // console.log(req.body.burger_name);
-    burger.create(req.body.burger_name, false, function(result){
-        res.json({ id: result.insertId })
-    });
+router.post("/api/burgers", function(req, res) {
+  // console.log(req.body.burger_name);
+  burger.create(req.body.burger_name, false, function(result) {
+    res.json({ id: result.insertId });
+  });
+});
+
+router.put("/api/burgers/:id", function(req, res) {
+  var id = req.params.id;
+
+  console.log("id: ", id);
+
+  burger.update(id, true, function(result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
 });
 
 // Export routes for server.js to use.

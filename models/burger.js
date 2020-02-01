@@ -1,4 +1,4 @@
-var orm = require('../config/orm.js')
+var orm = require("../config/orm.js");
 
 // Works
 // orm.insertOne("This is a test", false);
@@ -7,21 +7,21 @@ var orm = require('../config/orm.js')
 // orm.selectAll();
 
 var burger = {
-    all: function(cb){
-        orm.selectAll(function(result){
-            cb(result);
-        })
-    },
-    create: function(burgerName, isDevoured, cb){
-        orm.insertOne(burgerName, isDevoured, function(result){
-            cb(result);
-        });
-    },
-    update: function(updateThisOne, isDevoured, cb){
-        orm.updateOne(updateThisOne, isDevoured, function(result){
-            cb(result);
-        })
-    }
-}
+  all: function(cb) {
+    orm.selectAll(function(result) {
+      cb(result);
+    });
+  },
+  create: function(burgerName, isDevoured, cb) {
+    orm.insertOne(burgerName, isDevoured, function(result) {
+      cb(result);
+    });
+  },
+  update: function(updateThisOne, isDevoured, cb) {
+    orm.updateOne(updateThisOne, isDevoured, function(result) {
+      cb(result);
+    });
+  }
+};
 
 module.exports = burger;

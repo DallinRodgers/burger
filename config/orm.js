@@ -9,21 +9,28 @@ var orm = {
       callBack(result);
     });
   },
-  insertOne: function(burgerName, isDevoured, callBack){
-    var queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (?, ?);";
-    connection.query(queryString, [burgerName, isDevoured], function(err, result){
-      if(err) throw err;
+  insertOne: function(burgerName, isDevoured, callBack) {
+    var queryString =
+      "INSERT INTO burgers (burger_name, devoured) VALUES (?, ?);";
+    connection.query(queryString, [burgerName, isDevoured], function(
+      err,
+      result
+    ) {
+      if (err) throw err;
       console.log(result);
       callBack(result);
-    })
+    });
   },
-  updateOne: function(updateThisOne, isDevoured, callBack){
+  updateOne: function(updateThisOne, isDevoured, callBack) {
     var queryString = "UPDATE burgers SET devoured = ? WHERE id = ?";
-    connection.query(queryString, [isDevoured, updateThisOne], function(err, result){
-      if(err) throw err;
+    connection.query(queryString, [isDevoured, updateThisOne], function(
+      err,
+      result
+    ) {
+      if (err) throw err;
       console.log("Burger is Devoured");
       callBack(result);
-    })
+    });
   }
 };
 
