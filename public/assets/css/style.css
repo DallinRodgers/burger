@@ -48,15 +48,24 @@ li {
 li span {
   transform: skewX(20deg);
 }
+input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+input:focus {
+  outline: none;
+}
 button {
   padding: 0.5rem;
   margin-left: 0.5rem;
-  background: rgba(18, 255, 247, 1);
+  background: transparent;
   outline: none;
   border: none;
+  transition: all 0.5s;
 }
 button:hover {
   cursor: pointer;
+  color: #fff;
 }
 
 #burger-status {
@@ -88,5 +97,10 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+}
+.btn-green {
+  background: rgb(179, 255, 171);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
 }
