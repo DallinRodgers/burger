@@ -1,7 +1,6 @@
 <li>
 	{{burger_name}}
 
-	<button data-id="{{id}}" data-devoured="{{devoured}}" {{#if devoured}}class="d-none"{{/if}}>
-		{{#if devoured}}SLEEP TIME!{{else}}Devour It!{{/if}}
-	</button>
-</li>
+	<button data-id="{{id}}" data-devoured="{{devoured}}" class="change-devoured {{#if devoured}}d-none{{/if}}">
+		{{#if devoured}}SLEEP TIME!{{else}}Devour
+		It!{{/if}} </button> </li>
