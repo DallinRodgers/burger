@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Roboto Condensed", sans-serif;
+  min-height: 100%;
+}
+h1 {
+  font-size: 6.5rem;
+  text-align: center;
+}
+h2 {
+  font-size: 4rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+li {
+  list-style: none;
+  margin: 0.5rem;
+  font-size: 1.8rem;
+}
+button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#burger-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem 0;
+}
+.burgers-to-eat,
+.burgers-eaten {
+  padding: 0 1.5rem;
+}
+.d-none {
+  display: none;
+}
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+.create-form {
+  max-width: 60rem;
+  min-height: 10rem;
+  font-size: 1.8rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
